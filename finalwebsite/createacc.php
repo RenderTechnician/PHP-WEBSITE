@@ -16,6 +16,7 @@
 <body>
 <div id="creationback">
 	<h1>Account Creation</h1>
+	<form action="createacc.php" method="post">
 	<input type="text" name="" class="input" placeholder="First Name">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="" class="input" placeholder="Last Name">
@@ -65,7 +66,8 @@
 			<input type="text" name="" class="input" placeholder="Answer to Security Question 2">
 		<br>
 		<br>
-		<button>Sign Up</button>
+		<button type="submit">Sign Up</button>
+		</form>
 </div>
 </body>
 </html>

@@ -14,14 +14,14 @@
 	<p id="isthisyou">Logged in as FIRSTNAMEPLACEHOLDER LASTNAMEPLACEHOLDER. Not you? <a href="index.php">Click Here</a></p>
 	<br>
 	<div id="gav_parent">
-		<p><img onmouseout="this.src='/gpav1.png'" onmouseover="this.src='/gpav2.png'" src="/gpav1.png"  class="gpav"></p>
-		<p><img onmouseout="this.src='/tr1.png'" onmouseover="this.src='/tr2.png'" src="/tr1.png"  class="gpav"></p>
-		<p><img onmouseout="this.src='/pre1.png'" onmouseover="this.src='/pre2.png'" src="/pre1.png"  class="gpav"></p>
-		<p><img onmouseout="this.src='/app1.png'" onmouseover="this.src='/app2.png'" src="/app1.png"  class="gpav"></p>
+		<p><a href="gpavailiable.php"><img onmouseout="this.src='/gpav1.png'" onmouseover="this.src='/gpav2.png'" src="/gpav1.png"  class="gpav"></a></p>
+		<p><a href="testresults.php"><img onmouseout="this.src='/tr1.png'" onmouseover="this.src='/tr2.png'" src="/tr1.png"  class="gpav"></a></p>
+		<p><a href="renewpre.php"><img onmouseout="this.src='/pre1.png'" onmouseover="this.src='/pre2.png'" src="/pre1.png"  class="gpav"></a></p>
+		<p><a href="appointments.php"><img onmouseout="this.src='/app1.png'" onmouseover="this.src='/app2.png'" src="/app1.png"  class="gpav"></a></p>
 		</div>
 	<div id="gav_parent2">
-		<p><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav"></p>
-		<p><img onmouseout="this.src='/ma1.png'" onmouseover="this.src='/ma2.png'" src="/ma1.png"  class="gpav"></p>
+		<p><a href="appcal.php"><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav"></a></p>
+		<p><a href="modapp.php"><img onmouseout="this.src='/ma1.png'" onmouseover="this.src='/ma2.png'" src="/ma1.png"  class="gpav"></a></p>
 	</div>
 </body>
 </html>
