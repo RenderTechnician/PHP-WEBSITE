@@ -11,7 +11,21 @@
 	</header>
 </head>
 <body>
-	<p id="isthisyou">Logged in as FIRSTNAMEPLACEHOLDER LASTNAMEPLACEHOLDER. Not you? <a href="index.php">Click Here</a></p>
+	<p id="isthisyou"><?php 
+			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
+			$user ='root';
+			$password = '';
+			try{$dbHandler = new PDO($dsn,$user,$password);} catch (PDOException $e){die('sorry,database problem');}?>
+				Logged in as 
+				<?php session_start(); 
+				$user = $_SESSION['User'];
+			 	$query = "SELECT * FROM majorvalue WHERE Username = '$user'";
+			 	$result = $dbHandler->query($query);
+			 	$row =$result->fetch();
+			 	echo $row['Firstname']. " ". $row['Lastname'] ?>
+
+				. Not you? <a href="index.php">Click Here</a></p>
+
 	<br>
 	<div id="gav_parent">
 		<p><a href="gpavailiable.php"><img onmouseout="this.src='/gpav1.png'" onmouseover="this.src='/gpav2.png'" src="/gpav1.png"  class="gpav"></a></p>

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php session_unset(); ?>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="primary.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="jscript1.js"></script>
 	<header id = homeheader><p id="over">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><img src="/over_logo.png" class="over_logo"></a></p>
 		<div id="loginmain">
+			<form method="post">
 		<input type="Username" name="Login" placeholder="Username" >
 <input type="Password" name="Passwd" placeholder="Password">
 <a href = "userpage.php"><button type="submit">Login</button></a>
+</form>
 <p>Don't have an account with us? Click <a href="createacc.php">here</a> to sign up</p>
 <p><a href="">Forgotten Password</a></p>
 </div>
@@ -30,6 +33,13 @@
 	<div id="maps">
 		<iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Drings%20Cl%2C%20Over%2C%20Cambridge%20CB24%205NZ+(Over%20Surgery)&amp;ie=UTF8&amp;t=h&amp;z=19&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
 		<br>
+					<?php 
+			if (isset($_POST['Login'])) {
+			session_start();
+			$_SESSION['User'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
+			header('Location: userpage.php');
+			}
+		 	?>
 </body>
 <footer id="footer"><h2>Contact Information</h2>
 <p>Phone Number : 01954 231550</p>
