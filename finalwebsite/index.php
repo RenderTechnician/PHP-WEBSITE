@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php session_unset(); ?>
+	<?php
+	session_start();
+	session_unset();
+	?>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="primary.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -36,6 +39,7 @@
 					<?php 
 			if (isset($_POST['Login'])) {
 			session_start();
+			echo $_SESSION['User'];
 			$_SESSION['User'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
 			header('Location: userpage.php');
 			}

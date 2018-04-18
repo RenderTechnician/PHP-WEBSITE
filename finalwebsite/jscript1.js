@@ -1,5 +1,4 @@
 $( document ).ready(function function_name() {
-console.log("hello");
 $("#maps").hide().fadeIn(1500);
 $("#opening").hide().fadeIn(1500);
 $("#homeheader").hide().fadeIn(1500);
@@ -9,3 +8,15 @@ $("#isthisyou").hide().fadeIn(1500);
 $("#gav_parent").hide().fadeIn(1500);
 $("#gav_parent2").hide().fadeIn(1500);
 });
+
+function Renewaction()
+{
+alert('TestPrompt');
+}
+//booking an appointment
+function booking1() {
+alert('b1');	
+}
+function booking2() {
+alert('b2');
+}
