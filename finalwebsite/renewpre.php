@@ -27,15 +27,17 @@
 					{
 						echo "Item $x: ";
 			 	echo $row['Prescribed Item'].'<br>'. " Renewals Remaining: ". $row['Quantity Remaining']; 
+						 $_SESSION['varx'] = $x;
 						 echo'<br>';
 						 echo '<br><input type ="submit" onclick="javascript:debug'.$x.'();"
-						 class = "button" name="button" value ="Renew Prescription"></input>'.'<br><hr id ="bookline"><br>';
+						 class = "button" name="button'.$x.'" value ="Renew Prescription"></input>'.'<br><hr id ="bookline"><br>';
 						 if ($x > 0) {
 						 $query = "SELECT * FROM prescription WHERE ID = '$user$x'";
 						 $data = $dbHandler->query($query);
 						 $row = $data->fetch();
 						 $quantity = $row['Quantity Remaining'];
-						 var_dump($quantity);
+						 //$_SESSION['varx'] = $x;
+						 var_dump($_SESSION['varx']);
 						 }
 						$x++;
 					}

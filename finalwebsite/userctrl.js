@@ -1,13 +1,15 @@
-function showImage() {
-var x = document.getElementbyID("gav_parent2");
-x.style.display = "block";	
-}
- function hideImage() {
-var x = userpage.getElementbyID("gav_parent2");
-x.style.display = "none";
-}
+var myVariable;
 function debug1() {
-alert('Prescription succesfully renewed');
+//alert('Prescription succesfully renewed');
+$.ajax({
+  method: "POST",
+  url: "inputdata.php",
+  data: {id : 1}
+})
+ .done(function( msg ) {
+    alert(msg);
+myVariable = 1;
+  });
 }
 function debug2() {
 alert('2');
