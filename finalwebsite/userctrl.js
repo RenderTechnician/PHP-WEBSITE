@@ -7,9 +7,12 @@ var x = userpage.getElementbyID("gav_parent2");
 x.style.display = "none";
 }
 function debug1() {
-alert('1');
-header('location:gpavailiable.php');
+alert('Prescription succesfully renewed');
 }
 function debug2() {
 alert('2');
+}
+function appcalender(){
+$(location).attr('google.com');	
+alert('1234');
 }

@@ -28,7 +28,15 @@
 						echo "Item $x: ";
 			 	echo $row['Prescribed Item'].'<br>'. " Renewals Remaining: ". $row['Quantity Remaining']; 
 						 echo'<br>';
-						 echo '<br><input type ="submit" onclick="javascript:debug'.$x.'();" class = "button" name="button" value ="Renew Prescription"></input>'.'<br><hr id ="bookline"><br>';
+						 echo '<br><input type ="submit" onclick="javascript:debug'.$x.'();"
+						 class = "button" name="button" value ="Renew Prescription"></input>'.'<br><hr id ="bookline"><br>';
+						 if ($x > 0) {
+						 $query = "SELECT * FROM prescription WHERE ID = '$user$x'";
+						 $data = $dbHandler->query($query);
+						 $row = $data->fetch();
+						 $quantity = $row['Quantity Remaining'];
+						 var_dump($quantity);
+						 }
 						$x++;
 					}
 			 	?>

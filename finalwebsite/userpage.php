@@ -20,6 +20,7 @@
 				Logged in as 
 				<!-- Controls the top name display, selects the first & last name from database majorvalue based on the login username -->
 				<?php session_start(); 
+
 				$user = $_SESSION['User'];
 			 	$query = "SELECT * FROM majorvalue WHERE Username = '$user'";
 			 	$result = $dbHandler->query($query);
@@ -30,12 +31,6 @@
 			 	$result = $dbHandler->query($query);
 			 	$row = $result->fetch();
 			 	$_SESSION['Priv'] = $row['Clearance'];
-			 	if ($_SESSION['Priv'] == "root") {
-			 		echo '<script type="text/javascript">$(".gav_parent2").hide();</script>';
-			 	}
-				if ($_SESSION['Priv'] == "visitor") {
-			 	}
-				echo'<script>$(document).ready($(".gpav2").hide());</script>';
 			 	?>
 
 				, Not you? <a href="/PHP-WEBSITE-master/finalwebsite/index.php">Click Here</a></p>
@@ -46,9 +41,22 @@
 		<p><a href="renewpre.php"><img onmouseout="this.src='/pre1.png'" onmouseover="this.src='/pre2.png'" src="/pre1.png"  class="gpav"></a></p>
 		<p><a href="appointments.php"><img onmouseout="this.src='/app1.png'" onmouseover="this.src='/app2.png'" src="/app1.png"  class="gpav"></a></p>
 		</div>
-	<div id="gav_parent2">
-		<p><a href="appcal.php"><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2"></a></p>
-		<p><a href="modapp.php"><img onmouseout="this.src='/ma1.png'" onmouseover="this.src='/ma2.png'" src="/ma1.png"  class="gpav2"></a></p>
+		<div id="gav_parent2">
+		<!--<p><a href="appcal.php"><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2"></a></p> -->
+		<p><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2" onclick="<?php 
+		if ($_SESSION['Priv'] == "root"){ echo ("location.href='appcal.php'");} ?>"></p>
+		<p><img onmouseout="this.src='/ma1.png'" onmouseover="this.src='/ma2.png'" src="/ma1.png"  class="gpav2" onclick="<?php 
+		if ($_SESSION['Priv'] == "root"){ echo ("location.href='modapp.php'");} ?>"></p>
+			<?php 
+			if ($_SESSION['Priv'] == "visitor") {
+			echo '<script language="javascript">    
+            document.getElementById("gav_parent2").style.opacity = "0.0";
+      		</script>';}
+      		if ($_SESSION['Priv'] == "root") {
+			echo '<script language="javascript">    
+            document.getElementById("gav_parent2").style.opacity = "1.0";
+      		</script>';}
+		?>
 	</div>
 	<?php 
 if(!isset($_SESSION['User'])){
