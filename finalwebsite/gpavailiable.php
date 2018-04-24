@@ -6,6 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="jscript1.js"></script>
 		<script type="text/javascript" src="usectrl.js"></script>
+				<script type="text/javascript" src="booking.js"></script>
 	<header id = homeheader><p id="over">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><img src="/over_logo.png" class="over_logo"></a></p>
 	</header>
 </head>
@@ -13,22 +14,19 @@
 	<div id="creationback">
 <h2>Book a GP / Nurse Appointment</h2>
 	<form method="post">
-	<select>
+	<select name ="DRNSETC">
+		<option value="">--Please Select A Value--</option>
 		<optgroup label="Doctors">
-			<option value="A">Dr Judith Davis</option>
-			<option value="A">Dr Craig Needs</option>
-			<option value="A">Dr Richard Maddison</option>
-			<option value="A">Dr Lowery</option>
+			<option value="Dr Judith Davis">Dr Judith Davis</option>
+			<option value="Dr Craig Needs">Dr Craig Needs</option>
+			<option value="Dr Richard Maddison">Dr Richard Maddison</option>
+			<option value="Dr Lowery">Dr Lowery</option>
 		</optgroup>
 		<option disabled="_________"></option>
 		<optgroup label="Nurses">
-			<option value="A">Lesley Bowring</option>
-			<option value="A">Elaine Dockrill</option>
-			<option value="A">Carole Spelzini</option>
-		</optgroup>
-				<option disabled="_________"></option>
-		<optgroup label="Other">
-			<option value="A">All</option>
+			<option value="Lesley Bowring">Lesley Bowring</option>
+			<option value="Elaine Dockrill">Elaine Dockrill</option>
+			<option value="Carole Spelzini">Carole Spelzini</option>
 		</optgroup>
 	</select>
 	<select name="test1">
@@ -44,10 +42,37 @@
 	<br><br>
 	<div id="tabs">
 	<?php
+	session_start();
+	$x = 1;
+	$y = 0;
+			$cuser = $_SESSION['User'];
+			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
+			$user ='root';
+			$password = '';
+			try{$dbHandler = new PDO($dsn,$user,$password);} catch (PDOException $e){die('sorry,database problem');}
+				if (isset($_POST['test1'])) {
+			$date = date_create($_POST['test1']);
+			$timestamp = date_format($date,"Y-m-d");}
+			if (isset($_POST['DRNSETC'])) {
+			$DRN = $_POST['DRNSETC'];
+		//Isthedrnursepartvalid?
+			$postvalidvalues = array('Dr Judith Davis','Dr Craig Needs','Dr Richard Maddison','Dr Lowery','Lesley Bowring','Elaine Dockrill','Carole Spelzini');
+
+		if (!in_array($DRN, $postvalidvalues)) 
+		{
+			echo'<script language="javascript">    
+          	 alert("No Staff Member Selected, please select a staff member to book ");
+      		</script>';
+		}
+}
+			//var_dump($timestamp);
+			@$query = "SELECT * FROM appointments WHERE Person = '$cuser' AND Date = '$timestamp' AND DRNS = '$DRN' ORDER BY `Time`";
+			$result = $dbHandler->query($query);
+			$row = $result->fetchall(PDO::FETCH_ASSOC);
 	if (isset($_POST['test1'])) {
-	$date=date_create($_POST['test1']);
-$timestamp = date_format($date,"Y/m/d");
-$dayOfWeek = date("l", strtotime($timestamp));
+	$date = date_create($_POST['test1']);
+	$timestamp = date_format($date,"Y-m-d");
+	$dayOfWeek = date("l", strtotime($timestamp));
 	if ($dayOfWeek == "Monday") {
 	$t = 30 ;
 	}
@@ -70,9 +95,20 @@ $dayOfWeek = date("l", strtotime($timestamp));
 //$selectedTime = strtotime("9:15:00" + '15 minutes');
 	for ($j=0; $j < $t; $j++) { 
 		$q = $j + 1;
-		var_dump($q);
-	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."();' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";	
-	 } 
+		$time = date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"));
+		@$datecompare = $row[$y]['Date'];
+		while ($datecompare == $timestamp && $time == @$row[$y]['Time'] && $DRN == @$row[$y]['DRNS']){
+			$j++;
+			$y++;
+			$q++;
+			$time = date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"));
+		}
+//For sending data to another page	
+$_SESSION['timestore'] = $timestamp;
+$_SESSION['DON'] = $DRN;
+		if (in_array($DRN, $postvalidvalues) && (!(date("H:i:s") > $time  && date("Y-m-d") == $timestamp))){
+	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."(); window.location.reload()' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";}
+	 }
 	  ?>
 	  </div>
 	</div>

@@ -1,7 +1,8 @@
 /*Every Page Formatting*/
 body
 {
-background-image: url("/lightly-textured-background-tile.jpg");
+/*background-image: url("/lightly-textured-background-tile.jpg");*/
+background-color: #e6ecf0;
 background-size: 75%;
 margin: 2%;
 }

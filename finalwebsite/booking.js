@@ -1,8 +1,8 @@
 //Renawal1 Function
-function renewal1() {
+function booking1() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 1}
 })
  .done(function( msg ) {
@@ -11,10 +11,10 @@ $.ajax({
 }
 
 //Renawal2 Function
-function renewal2() {
+function booking2() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 2}
 })
  .done(function( msg ) {
@@ -23,10 +23,10 @@ $.ajax({
 }
 
 //Renawal3 Function
-function renewal3() {
+function booking3() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 3}
 })
  .done(function( msg ) {
@@ -35,10 +35,10 @@ $.ajax({
 }
 
 //Renawal4 Function
-function renewal4() {
+function booking4() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 4}
 })
  .done(function( msg ) {
@@ -47,10 +47,10 @@ $.ajax({
 }
 
 //Renawal5 Function
-function renewal5() {
+function booking5() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 5}
 })
  .done(function( msg ) {
@@ -59,10 +59,10 @@ $.ajax({
 }
 
 //Renawal6 Function
-function renewal6() {
+function booking6() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 6}
 })
  .done(function( msg ) {
@@ -71,10 +71,10 @@ $.ajax({
 }
 
 //Renawal7 Function
-function renewal7() {
+function booking7() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 7}
 })
  .done(function( msg ) {
@@ -83,10 +83,10 @@ $.ajax({
 }
 
 //Renawal8 Function
-function renewal8() {
+function booking8() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 8}
 })
  .done(function( msg ) {
@@ -95,10 +95,10 @@ $.ajax({
 }
 
 //Renawal9 Function
-function renewal9() {
+function booking9() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 9}
 })
  .done(function( msg ) {
@@ -107,10 +107,10 @@ $.ajax({
 }
 
 //Renawal10 Function
-function renewal10() {
+function booking10() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 10}
 })
  .done(function( msg ) {
@@ -119,10 +119,10 @@ $.ajax({
 }
 
 //Renawal11 Function
-function renewal11() {
+function booking11() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 11}
 })
  .done(function( msg ) {
@@ -131,10 +131,10 @@ $.ajax({
 }
 
 //Renawal12 Function
-function renewal12() {
+function booking12() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 12}
 })
  .done(function( msg ) {
@@ -143,10 +143,10 @@ $.ajax({
 }
 
 //Renawal13 Function
-function renewal13() {
+function booking13() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 13}
 })
  .done(function( msg ) {
@@ -155,10 +155,10 @@ $.ajax({
 }
 
 //Renawal14 Function
-function renewal14() {
+function booking14() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 14}
 })
  .done(function( msg ) {
@@ -167,10 +167,10 @@ $.ajax({
 }
 
 //Renawal15 Function
-function renewal15() {
+function booking15() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 15}
 })
  .done(function( msg ) {
@@ -179,10 +179,10 @@ $.ajax({
 }
 
 //Renawal16 Function
-function renewal16() {
+function booking16() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 16}
 })
  .done(function( msg ) {
@@ -191,10 +191,10 @@ $.ajax({
 }
 
 //Renawal17 Function
-function renewal17() {
+function booking17() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 17}
 })
  .done(function( msg ) {
@@ -203,10 +203,10 @@ $.ajax({
 }
 
 //Renawal18 Function
-function renewal18() {
+function booking18() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 18}
 })
  .done(function( msg ) {
@@ -215,10 +215,10 @@ $.ajax({
 }
 
 //Renawal19 Function
-function renewal19() {
+function booking19() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 19}
 })
  .done(function( msg ) {
@@ -227,10 +227,10 @@ $.ajax({
 }
 
 //Renawal20 Function
-function renewal20() {
+function booking20() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 20}
 })
  .done(function( msg ) {
@@ -239,10 +239,10 @@ $.ajax({
 }
 
 //Renawal21 Function
-function renewal21() {
+function booking21() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 21}
 })
  .done(function( msg ) {
@@ -251,10 +251,10 @@ $.ajax({
 }
 
 //Renawal22 Function
-function renewal22() {
+function booking22() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 22}
 })
  .done(function( msg ) {
@@ -263,10 +263,10 @@ $.ajax({
 }
 
 //Renawal23 Function
-function renewal23() {
+function booking23() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 23}
 })
  .done(function( msg ) {
@@ -275,10 +275,10 @@ $.ajax({
 }
 
 //Renawal24 Function
-function renewal24() {
+function booking24() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 24}
 })
  .done(function( msg ) {
@@ -287,10 +287,10 @@ $.ajax({
 }
 
 //Renawal25 Function
-function renewal25() {
+function booking25() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 25}
 })
  .done(function( msg ) {
@@ -299,10 +299,10 @@ $.ajax({
 }
 
 //Renawal26 Function
-function renewal26() {
+function booking26() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 26}
 })
  .done(function( msg ) {
@@ -311,10 +311,10 @@ $.ajax({
 }
 
 //Renawal27 Function
-function renewal27() {
+function booking27() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 27}
 })
  .done(function( msg ) {
@@ -323,10 +323,10 @@ $.ajax({
 }
 
 //Renawal28 Function
-function renewal28() {
+function booking28() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 28}
 })
  .done(function( msg ) {
@@ -335,10 +335,10 @@ $.ajax({
 }
 
 //Renawal29 Function
-function renewal29() {
+function booking29() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 29}
 })
  .done(function( msg ) {
@@ -347,10 +347,10 @@ $.ajax({
 }
 
 //Renawal30 Function
-function renewal30() {
+function booking30() {
 $.ajax({
   method: "POST",
-  url: "inputdata.php",
+  url: "appbook.php",
   data: {id : 30}
 })
  .done(function( msg ) {

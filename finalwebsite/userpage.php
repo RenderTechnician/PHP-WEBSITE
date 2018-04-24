@@ -35,7 +35,7 @@
 
 				, Not you? <a href="/PHP-WEBSITE-master/finalwebsite/index.php">Click Here</a></p>
 	<br>
-	<div id="gav_parent">
+	<div id="gav_parent"
 		<p><a href="gpavailiable.php"><img onmouseout="this.src='/gpav1.png'" onmouseover="this.src='/gpav2.png'" src="/gpav1.png"  class="gpav" ></a></p>
 		<p><a href="testresults.php"><img onmouseout="this.src='/tr1.png'" onmouseover="this.src='/tr2.png'" src="/tr1.png"  class="gpav"></a></p>
 		<p><a href="renewpre.php"><img onmouseout="this.src='/pre1.png'" onmouseover="this.src='/pre2.png'" src="/pre1.png"  class="gpav"></a></p>

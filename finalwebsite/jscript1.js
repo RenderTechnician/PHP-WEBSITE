@@ -8,15 +8,3 @@ $("#isthisyou").hide().fadeIn(1500);
 $("#gav_parent").hide().fadeIn(1500);
 $("#gav_parent2").hide().fadeIn(1500);
 });
-
-function Renewaction()
-{
-alert('TestPrompt');
-}
-//booking an appointment
-function booking1() {
-alert('b1');	
-}
-function booking2() {
-alert('b2');
-}

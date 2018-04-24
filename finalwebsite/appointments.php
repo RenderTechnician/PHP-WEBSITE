@@ -9,7 +9,28 @@
 	</header>
 </head>
 <body>
-Appointment calender (staff only)
+	<div id="creationback">
+	<?php
+	session_start();
+	$x = 1;
+			$cuser = $_SESSION['User'];
+			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
+			$user ='root';
+			$password = '';
+			try{$dbHandler = new PDO($dsn,$user,$password);} catch (PDOException $e){die('sorry,database problem');}
+			$query = "SELECT * FROM appointments WHERE Person = '$cuser'";
+			$result = $dbHandler->query($query);
+				while ($row = $result->fetch(PDO::FETCH_ASSOC))
+				{
+					$q = $x;
+				echo "<br>Doctor/Nurse: ". $row['DRNS']."&nbsp;&nbsp;&nbsp;&nbsp;". "Date: ".substr($row['Date'],0,10)."&nbsp;&nbsp;&nbsp;&nbsp;"."Time:".$row['Time'];
+				echo "&nbsp;&nbsp;&nbsp;&nbsp;"."<input type = 'submit' class = 'button' onclick='javascript:booking".$q."();' value = 'Cancel Appointment'></input><br>";
+				echo "<br><hr id ='bookline'><br>";
+				$x++;
+				}
+
+			?>
+		</div>
 </body>
 <footer id="footer"></footer>
 </html>

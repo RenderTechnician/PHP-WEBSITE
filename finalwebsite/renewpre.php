@@ -29,7 +29,7 @@
 			 	echo $row['Prescribed Item'].'<br>'. " Renewals Remaining: ". $row['Quantity Remaining']; 
 						 $_SESSION['varx'] = $x;
 						 echo'<br>';
-						 echo '<br><input type ="submit" onclick="javascript:debug'.$x.'();"
+						 echo '<br><input type ="submit" onclick="javascript:renewal'.$x.'();"
 						 class = "button" name="button'.$x.'" value ="Renew Prescription"></input>'.'<br><hr id ="bookline"><br>';
 						 if ($x > 0) {
 						 $query = "SELECT * FROM prescription WHERE ID = '$user$x'";
@@ -37,7 +37,6 @@
 						 $row = $data->fetch();
 						 $quantity = $row['Quantity Remaining'];
 						 //$_SESSION['varx'] = $x;
-						 var_dump($_SESSION['varx']);
 						 }
 						$x++;
 					}

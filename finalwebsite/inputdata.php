@@ -11,5 +11,13 @@ $x = $_GET['id'];
 			 	$result = $dbHandler->query($query);
 			 	$row = $result->fetch(PDO::FETCH_ASSOC);
 			 	$v = $row['Quantity Remaining'];
-			 	echo "$v"-1;
+			 	$r = $v-1;
+			 	//echo "$r";
+			 	if (!$row['Quantity Remaining'] == "0") {
+			 	$query = "UPDATE prescription SET `Quantity Remaining` ='$r' WHERE ID = '$user$x'";
+			 	$result = $dbHandler->query($query);
+			 	echo "Your prescription for ".$row['Prescribed Item']." has been approved";}
+				
+				if ($row['Quantity Remaining'] == "0") {
+				echo "You have no renewals remaining. Please visit your doctor to obtain additional renewals";}
 ?>
