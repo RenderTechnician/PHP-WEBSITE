@@ -107,7 +107,7 @@
 $_SESSION['timestore'] = $timestamp;
 $_SESSION['DON'] = $DRN;
 		if (in_array($DRN, $postvalidvalues) && (!(date("H:i:s") > $time  && date("Y-m-d") == $timestamp))){
-	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."(); window.location.reload()' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";}
+	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."(); 	' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";}
 	 }
 	  ?>
 	  </div>

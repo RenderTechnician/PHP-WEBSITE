@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2018 at 12:44 AM
+-- Generation Time: Apr 26, 2018 at 12:48 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -40,22 +40,8 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`Person`, `Date`, `Time`, `DRNS`) VALUES
-('TJamesson796969', '2018-04-25', '09:20:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '08:00:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-05-03', '08:00:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-05-03', '14:20:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '08:20:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '08:40:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '09:00:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '09:40:00', 'Dr Judith Davis'),
-('TJamesson796969', '2018-04-25', '08:00:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '08:20:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '08:40:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '09:00:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '09:20:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '09:40:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '10:00:00', 'Dr Craig Needs'),
-('TJamesson796969', '2018-04-25', '10:20:00', 'Dr Craig Needs');
+('TJamesson796969', '2018-04-27', '08:00:00', 'Dr Judith Davis'),
+('TJamesson796969', '2018-04-27', '08:20:00', 'Dr Judith Davis');
 
 -- --------------------------------------------------------
 

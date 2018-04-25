@@ -60,7 +60,7 @@
 	</div>
 	<?php 
 if(!isset($_SESSION['User'])){
-	header('Location: index.php');
+	header('Location: index.php');	
 }
 	 ?>
 	 <!--Start of Tawk.to Script-->
