@@ -9,7 +9,16 @@
 	</header>
 </head>
 <body>
-Modify Appointments (staff only)
+	<div id="creationback">
+	<input type="textbox" name="input3" placeholder="Type in me and i'll search the database" id="input3">	
+	<select>
+		<option value="Person">Person</option>
+		<option value="Date">Date</option>
+		<option value="Time">Time</option>
+		<option value="DRNS">DRNS</option>
+	</select>
+	<input type="submit" value="Validate Query" name="">
+	</div>
 </body>
 <footer id="footer"></footer>
 </html>
