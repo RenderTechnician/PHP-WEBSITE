@@ -17,7 +17,6 @@
 <a href = "userpage.php"><button type="submit">Login</button></a>
 </form>
 <p>Don't have an account with us? Click <a href="createacc.php">here</a> to sign up</p>
-<p><a href="">Forgotten Password</a></p>
 </div>
 	</header>
 </head>
@@ -36,13 +35,26 @@
 	<div id="maps">
 		<iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Drings%20Cl%2C%20Over%2C%20Cambridge%20CB24%205NZ+(Over%20Surgery)&amp;ie=UTF8&amp;t=h&amp;z=19&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
 		<br>
-					<?php 
+			<?php 
+			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
+			$user ='root';
+			$password = '';
+			try{$dbHandler = new PDO($dsn,$user,$password);} catch (PDOException $e){die('sorry,database problem');}
 			if (isset($_POST['Login'])) {
-			session_start();
-			echo $_SESSION['User'];
-			$_SESSION['User'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
-			header('Location: userpage.php');
+			$User = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
+			$pass = filter_var($_POST['Passwd'], FILTER_SANITIZE_STRING);
+			$query = "SELECT * FROM userdata WHERE Username = '$User'";
+			$result = $dbHandler->query($query);
+			var_dump($pass);
+			if ($row = $result->fetch(PDO::FETCH_ASSOC)&& password_verify($pass,$row['Password'])){ die('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'."hmmm.... We don't recognise those login credentials, are you sure they're correct?");
 			}
+			else
+			{
+			session_start();
+			$_SESSION['User'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
+			echo $_SESSION['User'];
+			header('Location: userpage.php');
+			}}
 		 	?>
 </body>
 <footer id="footer"><h2>Contact Information</h2>

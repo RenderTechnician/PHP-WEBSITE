@@ -114,7 +114,7 @@ margin-left: 23%;
 {
 	clear: both;
 	width: 100%;
-	margin-left: 37%;
+	margin-left: 30%;
 }
 #bookline
 {
@@ -124,7 +124,14 @@ border-color: #f7c9cc;
 }
 #input3
 {
-	width: 60%;
+	width: 30%;
 	margin-top: 2%;
+	text-align: center;
+}
+#datashow
+{
+	margin-right: 5%;
+	background-color: white;
+	width: 50%;
 	text-align: center;
 }

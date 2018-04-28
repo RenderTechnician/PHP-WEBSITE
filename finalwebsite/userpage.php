@@ -45,8 +45,13 @@
 		<!--<p><a href="appcal.php"><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2"></a></p> -->
 		<p><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2" onclick="<?php 
 		if ($_SESSION['Priv'] == "root"){ echo ("location.href='appcal.php'");} ?>"></p>
-		<p><img onmouseout="this.src='/ma1.png'" onmouseover="this.src='/ma2.png'" src="/ma1.png"  class="gpav2" onclick="<?php 
+
+		<p><img onmouseout="this.src='/PH2.png'" onmouseover="this.src='/ma2.png'" src="/PH2.png"  class="gpav2" onclick="<?php 
 		if ($_SESSION['Priv'] == "root"){ echo ("location.href='modapp.php'");} ?>"></p>
+
+		<p><img onmouseout="this.src='/PH1.png'" onmouseover="this.src='/ac2.png'" src="/PH1.png"  class="gpav2" onclick="<?php 
+		if ($_SESSION['Priv'] == "root"){ echo ("location.href='staffbook.php'");} ?>"></p>
+			
 			<?php 
 			if ($_SESSION['Priv'] == "visitor") {
 			echo '<script language="javascript">    
