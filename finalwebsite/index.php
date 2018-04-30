@@ -45,16 +45,18 @@
 			$pass = filter_var($_POST['Passwd'], FILTER_SANITIZE_STRING);
 			$query = "SELECT * FROM userdata WHERE Username = '$User'";
 			$result = $dbHandler->query($query);
+			$row = $result->fetch(PDO::FETCH_ASSOC);
 			var_dump($pass);
-			if ($row = $result->fetch(PDO::FETCH_ASSOC)&& password_verify($pass,$row['Password'])){ die('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'."hmmm.... We don't recognise those login credentials, are you sure they're correct?");
-			}
-			else
+			if ($row['Username'] == "$User" && password_verify($pass,$row['Password']))
 			{
 			session_start();
 			$_SESSION['User'] = filter_var($_POST['Login'], FILTER_SANITIZE_STRING);
 			echo $_SESSION['User'];
 			header('Location: userpage.php');
-			}}
+			}
+			else { die('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'."hmmm.... We don't recognise those login credentials, are you sure they're correct?");
+			}
+		}
 		 	?>
 </body>
 <footer id="footer"><h2>Contact Information</h2>

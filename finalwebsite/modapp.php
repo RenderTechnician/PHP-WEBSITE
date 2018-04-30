@@ -24,6 +24,9 @@
 	</div>
 			<?php 
 			session_start();
+			if ($_SESSION['Priv'] == "visitor") {
+			header('Location: userpage.php');
+			}
 			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
 			$user ='root';
 			$password = '';

@@ -10,6 +10,9 @@
 	<header id = homeheader><p id="over">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><img src="/over_logo.png" class="over_logo"></a></p>
 		<?php 
 			session_start();
+			if ($_SESSION['Priv'] == "visitor") {
+			header('Location: userpage.php');
+			}
 			$cuser = $_SESSION['User'];
 			$dsn = 'mysql:host=127.0.0.1;dbname=finalwebsite;';
 			$user ='root';
@@ -76,7 +79,7 @@
       		</script>';
 		}
 }
-			$posteduser = $_POST['WhoFor'];
+			@$posteduser = $_POST['WhoFor'];
 			//var_dump($timestamp);
 			@$query = "SELECT * FROM appointments WHERE Person = '$posteduser' AND Date = '$timestamp' AND DRNS = '$DRN' ORDER BY `Time`";
 			$result = $dbHandler->query($query);

@@ -24,7 +24,7 @@
 				$user = $_SESSION['User'];
 			 	$query = "SELECT * FROM majorvalue WHERE Username = '$user'";
 			 	$result = $dbHandler->query($query);
-			 	$row =$result->fetch();
+			 	$row =$result->fetch(PDO::FETCH_ASSOC);
 			 	echo $row['Firstname']. " ". $row['Lastname']; 
 			 	//Controls the user clearance, based on the username adjacent in the database
 			 	$query = "SELECT * FROM userdata WHERE Username = '$user'";
@@ -43,13 +43,13 @@
 		</div>
 		<div id="gav_parent2">
 		<!--<p><a href="appcal.php"><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2"></a></p> -->
-		<p><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2" onclick="<?php 
-		if ($_SESSION['Priv'] == "root"){ echo ("location.href='appcal.php'");} ?>"></p>
+		<!--<<p><img onmouseout="this.src='/ac1.png'" onmouseover="this.src='/ac2.png'" src="/ac1.png"  class="gpav2" onclick="<?php 
+		//if ($_SESSION['Priv'] == "root"){ echo ("location.href='appcal.php'");} ?>"></p> -->
 
-		<p><img onmouseout="this.src='/PH2.png'" onmouseover="this.src='/ma2.png'" src="/PH2.png"  class="gpav2" onclick="<?php 
+		<p><img onmouseout="this.src='/cancel1.png'" onmouseover="this.src='/cancel2.png'" src="/cancel1.png"  class="gpav2" onclick="<?php 
 		if ($_SESSION['Priv'] == "root"){ echo ("location.href='modapp.php'");} ?>"></p>
 
-		<p><img onmouseout="this.src='/PH1.png'" onmouseover="this.src='/ac2.png'" src="/PH1.png"  class="gpav2" onclick="<?php 
+		<p><img onmouseout="this.src='/book1.png'" onmouseover="this.src='/book2.png'" src="/book1.png"  class="gpav2" onclick="<?php 
 		if ($_SESSION['Priv'] == "root"){ echo ("location.href='staffbook.php'");} ?>"></p>
 			
 			<?php 

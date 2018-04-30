@@ -25,7 +25,7 @@
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 					$q = $y;
 				echo "<br>Doctor/Nurse: ". $row['DRNS']."&nbsp;&nbsp;&nbsp;&nbsp;". "Date: ".substr($row['Date'],0,10)."&nbsp;&nbsp;&nbsp;&nbsp;"."Time:".$row['Time'];
-				echo "&nbsp;&nbsp;&nbsp;&nbsp;"."<input type = 'submit' class = 'button' onclick='javascript:cancel".$q."();' value = 'Cancel Appointment'></input><br>";
+				echo "&nbsp;&nbsp;&nbsp;&nbsp;"."<input type = 'submit' class = 'button' onclick='javascript:cancel".$q."(); window.location.reload();' value = 'Cancel Appointment'></input><br>";
 				echo "<br><hr id ='bookline'><br>";
 				$y++;
 			}

@@ -74,27 +74,42 @@
 		$firstquery = "SELECT * FROM userdata WHERE Email = '$MailAddress'";
 		$result = $dbHandler->query($firstquery);
 			if (!$row = $result->fetch(PDO::FETCH_ASSOC)){
+				if (!$MailAddress == $row['Email']) {
+					if (strlen($pass) > 5) {
 			$sqlQuery = "INSERT INTO majorvalue VALUES(?,?,?,?,?,?)";
 			$query = $dbHandler->prepare($sqlQuery);
 			//execute the query
 			$query->execute(array("$Username","$FirstName","$LastName","$NI","$postcode","$answer"));
 			$sqlQuery = "INSERT INTO userdata VALUES(?,?,?,?)";
 			$query = $dbHandler->prepare($sqlQuery);
-			$query->execute(array("$Username","$encrypt_pass", "visitor", $MailAddress));}
-		else{
-			echo "<script>alert('It appears you already have an account with us! Please contact us to reset your password')</script>";
+			$query->execute(array("$Username","$encrypt_pass", "visitor", $MailAddress));
+			echo "Account Succesfully Created. Please check your email for a copy of your login details";
+				var_dump(strlen($pass));
+			//email
+
+			mail("willrathlou@hotmail.com", "Thankyou for registering with Open Surgery", 
+			"<p> Hello " . $FirstName . " " . $LastName . "!</p>".
+			//	"<br/> It's a pleasure to have you here at Open Surgery".
+		//		"<br/> By logging in you can book appointments with our doctors and nurses".
+		//		"<br/> and chat with our receptionist if you have any problems.".
+		//		"<br/><br/>".
+			"<br/> Your login details are enclosed below.".
+			"<br/><br/>Username: ".$Username.
+			"<br/>Password: " . $pass
+	//			"<br/><br> Have a lovely day!".
+		//		"<br/> System adminstrators"
+			,"From: outpost.render@gmail.com");
+			//email end
+				}
+				else{
+					echo "Account not created, please try again ";
+			}
+				}
+			}
+				else{
+					echo "<br>It appears you already have an account with us! Please contact us to reset your password";
+					}
 		}
-	}
-		//debugger
-	//	echo"Username: ".$Username."<br><br>";
-	//	echo $MailAddress."<br><br>";
-		//echo $NI."<br><br>";
-	//	echo $postcode."<br><br>";
-	//	echo strlen($pass);
-	//	echo $encrypt_pass."<br>";
-	//	echo strlen($encrypt_pass);
-	//	echo $answer;
-	//	mail("willrathlou@hotmail.com", "Test Message", $Username,"From: outpost.render@gmail.com");
 		 ?>
 </div>
 </body>

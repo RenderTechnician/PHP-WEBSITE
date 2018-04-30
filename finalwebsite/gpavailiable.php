@@ -53,7 +53,7 @@
 				if (isset($_POST['test1'])) {
 			$date = date_create($_POST['test1']);
 			$timestamp = date_format($date,"Y-m-d");}
-			if (isset($_POST['DRNSETC'])) {
+			if (isset($_POST['DRNSETC'])) {			
 			$DRN = $_POST['DRNSETC'];
 		//Isthedrnursepartvalid?
 			$postvalidvalues = array('Dr Judith Davis','Dr Craig Needs','Dr Richard Maddison','Dr Lowery','Lesley Bowring','Elaine Dockrill','Carole Spelzini');
@@ -107,7 +107,7 @@
 $_SESSION['timestore'] = $timestamp;
 $_SESSION['DON'] = $DRN;
 		if (in_array($DRN, $postvalidvalues) && (!(date("H:i:s") > $time  && date("Y-m-d") == $timestamp))){
-	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."(); 	' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";}
+	 	echo date('H:i:s', strtotime( "8:00:00.  + "	.	$j * 20	.	" minutes"))	.	"&nbsp;&nbsp;&nbsp;&nbsp;"	.	"<input type = 'submit' class = 'button' onclick='javascript:booking".$q."(); window.location.reload();	' value = 'Book Appointment'></input><br>"	.	"<br><hr id ='bookline'><br>";}
 	 }
 	  ?>
 	  </div>
